@@ -1,0 +1,13 @@
+name: dev
+dependencies:
+  - numpy
+  - pytest
+  - scipy
+  - lxml
+  - cython
+  - matplotlib
+  - requests
+  - psycopg2
+# Development Tools
+  - ipython
+  - pycodestyle

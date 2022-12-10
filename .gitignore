@@ -3,3 +3,5 @@
 .ssh/
 .vscode-server/
 .wget-hsts
+.conda
+miniconda3
