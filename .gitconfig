@@ -1,3 +1,14 @@
 [user]
 	email = drake.jeno@outlook.com
 	name = Drake Jeno
+[core]
+	editor = vim
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[diff]
+	tool = vscode
+[merge]
+	tool = vscode

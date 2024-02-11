@@ -1,0 +1,1 @@
+alias cdiff='code --diff'
