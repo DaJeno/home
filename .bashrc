@@ -12,6 +12,9 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# Check history commands before exectuting them.
+shopt -s histverify
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -136,3 +139,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
