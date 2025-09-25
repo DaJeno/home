@@ -1,0 +1,59 @@
+LIZARD SOUNDS - KEY MAPPINGS REFERENCE
+=====================================
+
+LETTER KEYS:
+A - Arabic Lizard Funny 64716.mp3
+B - Bryce5 69848.mp3
+C - Cat Lizard 59847.mp3
+D - Dash U Lizards 38582.mp3
+E - Dash You Lizards 49167.mp3
+F - Fortnite Lizard 55336.mp3
+G - Giant Lizards 25687.mp3
+H - If You Had Skin Like A Lizard 80530.mp3
+I - I Am The Lizard Queen 90367.mp3
+K - K9Kuro Lizard Noise No Bgm 78938.mp3
+L - Lizard Button 12218.mp3 (main lizard sound)
+M - Mlem Mlem Mlem 67186.mp3
+O - Oblivion Guard Make Fine Boots Lizard 3789.mp3
+P - Pl Hate Thet Fn Lizard 48858.mp3
+Q - I Am The Lizard Queen 90367.mp3 (duplicate)
+R - Rain World Lizard Hiss 1 22773.mp3
+S - Lizard Stereo 1 44145.mp3
+T - Lizard 52641.mp3
+U - Lizzard 32991.mp3
+W - Lizardman 11293.mp3
+X - Lizard Cries 36643.mp3
+Y - Yeah Baby I Am The Lizard King 56204.mp3
+Z - Lizard King 68979.mp3
+
+NUMBER KEYS:
+1 - Lizard King Soft 34894.mp3
+2 - Lizard King22 88618.mp3
+3 - Lizard Kingg 68001.mp3
+4 - Lizard Lizard 67770.mp3
+5 - Lizard Meme 43779.mp3
+6 - Lizardddddddddddddddd 29616.mp3
+7 - Lizardon Kaenhosha 82617.mp3
+8 - Lizzard 1 94606.mp3
+9 - Lizzardddddddddddddddddddd 63662.mp3
+0 - Mah Lizard 53459.mp3
+
+SPECIAL KEYS:
+Space - Mushu Dragon Not Lizard 56110.mp3
+Enter - Pl Lizard Piss 70857.mp3
+Tab - Mlg Lizard 46433.mp3
+Escape - Lets Go Lizard 83271.mp3
+
+CONTROL KEYS:
+F1 - Show help/key mappings
+Ctrl+Q - Quit the script
+
+TOTAL SOUNDS: 36
+
+USAGE:
+1. Download AutoHotkey from https://autohotkey.com/
+2. Install AutoHotkey
+3. Double-click lizard_sounds.ahk to run
+4. Press any mapped key to play sounds!
+
+NOTE: Make sure the 'lizard_sounds' folder is in the same directory as the .ahk file!

@@ -1,0 +1,52 @@
+LIZARD SOUNDS SOUNDBOARD - COMPLETE INSTALLER PACKAGE
+===================================================
+
+Package Version: 1.0
+Created: September 2025
+Total Size: ~6MB (includes all sounds + AutoHotkey installer)
+Total Sounds: 36 unique lizard audio clips
+
+INSTALLATION OPTIONS:
+====================
+
+🦎 EASIEST: Double-click "🦎 CLICK TO INSTALL.bat"
+   - Fully automated installation
+   - Includes prompts and guidance
+
+📁 STANDARD: Right-click "INSTALL.bat" → "Run as administrator"
+   - Complete installation with admin privileges
+   - Creates shortcuts and proper file associations
+
+⚡ ADVANCED: PowerShell "Install.ps1"
+   - More control over installation process
+   - Supports silent installation mode
+   - Better error handling and logging
+
+WHAT GETS INSTALLED:
+===================
+✓ AutoHotkey v2 (latest version)
+✓ 36 lizard sound files (3MB total)
+✓ Soundboard AutoHotkey script
+✓ Desktop shortcut
+✓ Start Menu shortcut
+✓ Installation in Documents\LizardSounds\
+
+REQUIREMENTS:
+=============
+- Windows 7 or later
+- Admin rights (for AutoHotkey installation)
+- Sound card/speakers
+- ~10MB free disk space
+
+USAGE AFTER INSTALL:
+====================
+1. Double-click "Lizard Sounds" desktop shortcut
+2. Press letter keys (A-Z) to play sounds
+3. Press number keys (1-0) for more sounds
+4. Press Space, Enter, Tab, Escape for special sounds
+5. Press F1 for help
+6. Press Ctrl+Q to quit
+
+NO INTERNET REQUIRED AFTER INSTALLATION!
+
+Enjoy your lizard soundboard! 🦎🎵
