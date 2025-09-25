@@ -114,45 +114,72 @@ function Install-LizardSounds {
         return $false
     }
 
+    # Copy executable launchers
+    Write-Info "Copying executable launchers..."
+    $launcherFiles = @(
+        "🦎 Lizard Sounds.bat",
+        "LizardSounds.vbs"
+    )
+
+    foreach ($launcher in $launcherFiles) {
+        $launcherSource = Join-Path $PSScriptRoot $launcher
+        $launcherTarget = Join-Path $installDir $launcher
+
+        if (Test-Path $launcherSource) {
+            Copy-Item -Path $launcherSource -Destination $launcherTarget -Force
+            Write-Success "Copied launcher: $launcher"
+        } else {
+            Write-Warning "Launcher not found: $launcherSource"
+        }
+    }
+
     return @{
         InstallDir = $installDir
         ScriptPath = $scriptTarget
+        BatchLauncher = Join-Path $installDir "🦎 Lizard Sounds.bat"
+        VBSLauncher = Join-Path $installDir "LizardSounds.vbs"
     }
 }
 
 function Create-Shortcuts {
-    param($ScriptPath, $InstallDir)
+    param($Installation)
 
     Write-Info "Creating shortcuts..."
 
     $WshShell = New-Object -ComObject WScript.Shell
-
-    # Desktop shortcut
     $desktopPath = [Environment]::GetFolderPath("Desktop")
+    $startMenuPath = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs"
+
+    # Main desktop shortcut (batch launcher)
     $desktopShortcut = Join-Path $desktopPath "Lizard Sounds.lnk"
-
     $shortcut = $WshShell.CreateShortcut($desktopShortcut)
-    $shortcut.TargetPath = $ScriptPath
-    $shortcut.WorkingDirectory = $InstallDir
-    $shortcut.Description = "Lizard Sounds Soundboard - Press letter keys to play sounds!"
+    $shortcut.TargetPath = $Installation.BatchLauncher
+    $shortcut.WorkingDirectory = $Installation.InstallDir
+    $shortcut.Description = "Lizard Sounds Soundboard - Click to start!"
     $shortcut.Save()
-
     Write-Success "Desktop shortcut created: $desktopShortcut"
 
-    # Start menu shortcut
-    $startMenuPath = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs"
-    $startMenuShortcut = Join-Path $startMenuPath "Lizard Sounds.lnk"
-
-    $shortcut = $WshShell.CreateShortcut($startMenuShortcut)
-    $shortcut.TargetPath = $ScriptPath
-    $shortcut.WorkingDirectory = $InstallDir
-    $shortcut.Description = "Lizard Sounds Soundboard - Press letter keys to play sounds!"
+    # Alternative VBS launcher shortcut
+    $vbsShortcut = Join-Path $desktopPath "Lizard Sounds (VBS).lnk"
+    $shortcut = $WshShell.CreateShortcut($vbsShortcut)
+    $shortcut.TargetPath = $Installation.VBSLauncher
+    $shortcut.WorkingDirectory = $Installation.InstallDir
+    $shortcut.Description = "Lizard Sounds Soundboard (VBScript launcher)"
     $shortcut.Save()
+    Write-Success "VBS shortcut created: $vbsShortcut"
 
+    # Start menu shortcut
+    $startMenuShortcut = Join-Path $startMenuPath "Lizard Sounds.lnk"
+    $shortcut = $WshShell.CreateShortcut($startMenuShortcut)
+    $shortcut.TargetPath = $Installation.BatchLauncher
+    $shortcut.WorkingDirectory = $Installation.InstallDir
+    $shortcut.Description = "Lizard Sounds Soundboard"
+    $shortcut.Save()
     Write-Success "Start menu shortcut created: $startMenuShortcut"
 
     return @{
         Desktop = $desktopShortcut
+        VBSDesktop = $vbsShortcut
         StartMenu = $startMenuShortcut
     }
 }
@@ -206,7 +233,7 @@ try {
     }
 
     # Create shortcuts
-    $shortcuts = Create-Shortcuts -ScriptPath $installation.ScriptPath -InstallDir $installation.InstallDir
+    $shortcuts = Create-Shortcuts -Installation $installation
 
     # Installation complete
     Write-Host ""
@@ -232,7 +259,7 @@ try {
         $startNow = Read-Host "Would you like to start the Lizard Sounds soundboard now? (y/n)"
         if ($startNow.ToLower() -eq 'y') {
             Write-Info "Starting Lizard Sounds..."
-            Start-Process -FilePath $installation.ScriptPath
+            Start-Process -FilePath $installation.BatchLauncher
         }
     }
 

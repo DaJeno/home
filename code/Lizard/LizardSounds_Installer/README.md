@@ -8,6 +8,7 @@ A complete soundboard featuring 36 lizard-themed audio clips from myinstants.com
 - **AutoHotkey v2 installer** (latest version)
 - **Automated installation scripts** (Batch and PowerShell)
 - **Complete soundboard script** with keyboard mappings
+- **Multiple launcher options** (.bat and .vbs)
 - **Desktop and Start Menu shortcuts**
 
 ## 🚀 Quick Installation

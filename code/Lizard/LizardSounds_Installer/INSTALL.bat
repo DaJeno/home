@@ -49,14 +49,22 @@ echo Copying sound files...
 xcopy /E /Y sounds "%INSTALL_DIR%\sounds\" >nul
 echo Copying AutoHotkey script...
 copy /Y lizard_sounds.ahk "%INSTALL_DIR%\" >nul
+echo Copying executable launchers...
+copy /Y "🦎 Lizard Sounds.bat" "%INSTALL_DIR%\" >nul
+copy /Y "LizardSounds.vbs" "%INSTALL_DIR%\" >nul
 
-:: Create desktop shortcut
-echo Creating desktop shortcut...
+:: Create desktop shortcuts
+echo Creating desktop shortcuts...
 set SHORTCUT_PATH=%USERPROFILE%\Desktop\Lizard Sounds.lnk
-set TARGET_PATH=%INSTALL_DIR%\lizard_sounds.ahk
+set TARGET_PATH=%INSTALL_DIR%\🦎 Lizard Sounds.bat
 
-:: Use PowerShell to create shortcut
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%SHORTCUT_PATH%'); $Shortcut.TargetPath = '%TARGET_PATH%'; $Shortcut.WorkingDirectory = '%INSTALL_DIR%'; $Shortcut.Description = 'Lizard Sounds Soundboard'; $Shortcut.Save()"
+:: Main desktop shortcut (batch launcher)
+powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%SHORTCUT_PATH%'); $Shortcut.TargetPath = '%TARGET_PATH%'; $Shortcut.WorkingDirectory = '%INSTALL_DIR%'; $Shortcut.Description = 'Lizard Sounds Soundboard - Click to start!'; $Shortcut.Save()"
+
+:: Alternative VBS launcher shortcut
+set VBS_SHORTCUT=%USERPROFILE%\Desktop\Lizard Sounds (VBS).lnk
+set VBS_TARGET=%INSTALL_DIR%\LizardSounds.vbs
+powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%VBS_SHORTCUT%'); $Shortcut.TargetPath = '%VBS_TARGET%'; $Shortcut.WorkingDirectory = '%INSTALL_DIR%'; $Shortcut.Description = 'Lizard Sounds Soundboard (VBScript launcher)'; $Shortcut.Save()"
 
 :: Create start menu shortcut
 echo Creating start menu shortcut...
