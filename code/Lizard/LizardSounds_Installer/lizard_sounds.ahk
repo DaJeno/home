@@ -16,17 +16,11 @@ a::SoundPlay(GetFullPath("Arabic Lizard Funny 64716.mp3"), true)
 ; B - Bryce5
 b::SoundPlay(GetFullPath("Bryce5 69848.mp3"), true)
 
-; C - Cat Lizard
-c::SoundPlay(GetFullPath("Cat Lizard 59847.mp3"), true)
-
 ; D - Dash U Lizards
 d::SoundPlay(GetFullPath("Dash U Lizards 38582.mp3"), true)
 
 ; E - Dash You Lizards (alternative dash sound)
 e::SoundPlay(GetFullPath("Dash You Lizards 49167.mp3"), true)
-
-; F - Fortnite Lizard
-f::SoundPlay(GetFullPath("Fortnite Lizard 55336.mp3"), true)
 
 ; G - Giant Lizards
 g::SoundPlay(GetFullPath("Giant Lizards 25687.mp3"), true)
@@ -113,10 +107,8 @@ F1::{
 LETTER KEYS:
 A - Arabic Lizard Funny
 B - Bryce5
-C - Cat Lizard
 D - Dash U Lizards
 E - Dash You Lizards
-F - Fortnite Lizard
 G - Giant Lizards
 H - If You Had Skin Like A Lizard
 I - I Am The Lizard Queen

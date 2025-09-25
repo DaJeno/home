@@ -8,6 +8,8 @@ dependencies:
   - matplotlib
   - requests
   - psycopg2
+  - jupyterlab
+  - black
 # Development Tools
   - ipython
   - pycodestyle
