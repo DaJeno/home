@@ -144,12 +144,12 @@ Press F1 to show this help
 ; Ctrl+Q to quit
 ^q::ExitApp()
 
-; Notification on startup
-MsgBox("
-(
-Lizard sound board is ready!
-Press F1 for key mappings
-Press Ctrl+Q to quit
-
-Total sounds loaded: 36
-)", "Lizard Sounds Loaded!")
+; Notification on startup (commented out for silent launch)
+; MsgBox("
+; (
+; Lizard sound board is ready!
+; Press F1 for key mappings
+; Press Ctrl+Q to quit
+;
+; Total sounds loaded: 36
+; )", "Lizard Sounds Loaded!")
